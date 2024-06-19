@@ -7,9 +7,13 @@ void proxy(CCHttpClient* self, CCHttpRequest* req) {
 	auto old_server = std::string("www.boomlings.com/database");
 	auto new_server = std::string("endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash");
 
-	auto final_url = new_url.replace(new_url.find(old_server), old_server.length(), new_server).c_str();
+	auto index = new_url.find(old_server)
 
-	req->setUrl(final_url);
+    if (std::string::npos != index) {
+        auto final_url = new_url.replace(index, old_server.length(), new_server).c_str();
+
+	    req->setUrl(final_url);
+    }
 
 	self->send(req);
 }
