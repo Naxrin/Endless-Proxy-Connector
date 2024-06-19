@@ -5,7 +5,7 @@ void proxy(CCHttpClient* self, CCHttpRequest* req) {
 	auto new_url = std::string(old_url);
 
 	auto old_server = std::string("www.boomlings.com/database");
-	auto new_server = std::string("dl.geometrydashchinese.com");
+	auto new_server = std::string("endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash");
 
 	auto final_url = new_url.replace(new_url.find(old_server), old_server.length(), new_server).c_str();
 
