@@ -9,7 +9,7 @@ std::string replace(std::string haystack, std::string needle, std::string replac
         return haystack.replace(index, needle.length(), replacement);
     }
 
-    return haystack
+    return haystack;
 }
 
 class $modify(_, CCHttpClient) {
