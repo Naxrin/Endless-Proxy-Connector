@@ -17,13 +17,13 @@ class $modify(_, CCHttpClient) {
     {
 		std::string url = req->getUrl();
 
-        std::string old_host = "www.boomlings.com/database";
+        std::string old_server_host = "www.boomlings.com/database";
         std::string new_server = "https://endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash";
         
-        url = replace(url, "http://" + old_host, new_server);
-        url = replace(url, "https://" + old_host, new_server);
+        url = replace(url, "http://" + old_server_host, new_server);
+        url = replace(url, "https://" + old_server_host, new_server);
 
-	    req->setUrl(final_url);
+	    req->setUrl(url);
         CCHttpClient::send(req);
     }
 };
