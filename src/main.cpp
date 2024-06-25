@@ -23,7 +23,9 @@ class $modify(_, CCHttpClient) {
         url = replace(url, "http://" + old_server_host, new_server);
         url = replace(url, "https://" + old_server_host, new_server);
 
-	    req->setUrl(url);
+        auto final_url = url.c_str();
+	    req->setUrl(final_url);
+
         CCHttpClient::send(req);
     }
 };
