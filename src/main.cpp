@@ -1,32 +1,29 @@
+#include <Geode/modify/CCHttpClient.hpp>
+
 using namespace geode::prelude;
 
-void proxy(CCHttpClient* self, CCHttpRequest* req) {
-	auto old_url = req->getUrl();
-	auto new_url = std::string(old_url);
-
-	auto old_server = std::string("www.boomlings.com/database");
-	auto new_server = std::string("endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash");
-
-	auto index = new_url.find(old_server);
+std::string replace(std::string haystack, std::string needle, std::string replacement) {
+    auto index = haystack.find(needle);
 
     if (std::string::npos != index) {
-        auto final_url = new_url.replace(index, old_server.length(), new_server).c_str();
-
-	    req->setUrl(final_url);
+        return haystack.replace(index, needle.length(), replacement);
     }
 
-	self->send(req);
+    return haystack
 }
 
-$execute {
-    Mod::get()->hook(
-        reinterpret_cast<void*>(
-			geode::addresser::getNonVirtual(&cocos2d::extension::CCHttpClient::send)
-        ),
-        &proxy,
-        "cocos2d::extension::CCHttpClient::send",
-        tulip::hook::TulipConvention::Thiscall
-    );
-}
+class $modify(_, CCHttpClient) {
+	void send(CCHttpRequest* req)
+    {
+		std::string url = req->getUrl();
 
-// https://github.com/relativemodder/tiny-gdps-switcher
+        std::string old_host = "www.boomlings.com/database";
+        std::string new_server = "https://endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash";
+        
+        url = replace(url, "http://" + old_host, new_server);
+        url = replace(url, "https://" + old_host, new_server);
+
+	    req->setUrl(final_url);
+        CCHttpClient::send(req);
+    }
+};
