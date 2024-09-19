@@ -19,13 +19,15 @@ class $modify(_, CCHttpClient) {
 
         std::string old_server_host = "www.boomlings.com/database";
         std::string new_server = "https://endless-services.zhazha120.cn/api/EndlessProxy/GeometryDash";
-        
-        url = replace(url, "http://" + old_server_host, new_server);
-        url = replace(url, "https://" + old_server_host, new_server);
+
+        if (Mod::get()->getSettingValue<bool>("Enabled")){
+            url = replace(url, "http://" + old_server_host, new_server);
+            url = replace(url, "https://" + old_server_host, new_server);
+	    }
 
         auto final_url = url.c_str();
 	    req->setUrl(final_url);
 
         CCHttpClient::send(req);
     }
-};
+}

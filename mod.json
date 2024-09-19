@@ -1,5 +1,5 @@
 {
-	"geode": "3.1.0",
+	"geode": "3.7.1",
 	"gd": {
 		"win": "*",
 		"android": "*",
@@ -10,5 +10,13 @@
 	"name": "Endless Proxy Connector",
 	"version": "v2.0.0",
 	"developer": "WOSHIZHAZHA120",
-	"description": "?"
+	"description": "?",
+    "settings":{
+        "Enabled":{
+            "name": "Enable",
+            "description": "?",
+            "type": "bool",
+            "default": true
+        }
+    }
 }
