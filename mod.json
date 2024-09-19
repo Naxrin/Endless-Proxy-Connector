@@ -11,6 +11,7 @@
 	"version": "v2.0.0",
 	"developer": "WOSHIZHAZHA120",
 	"description": "?",
+	"early-load": true,
     "settings":{
         "Enabled":{
             "name": "Enable",
