@@ -30,4 +30,4 @@ class $modify(_, CCHttpClient) {
 
         CCHttpClient::send(req);
     }
-}
+};
