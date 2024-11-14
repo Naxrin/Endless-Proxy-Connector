@@ -33,6 +33,7 @@ class $modify(_, CCHttpClient) {
     }
 };
 
+#ifndef GEODE_IS_MACOS
 class $modify(MySongInfoLayer, SongInfoLayer) {
     bool init(gd::string p0, gd::string p1, gd::string p2, gd::string p3, gd::string p4, gd::string p5, int p6, gd::string p7, int p8) {
         if (!SongInfoLayer::init(p0, p1, p2, p3, p4, p5, p6, p7, p8))
@@ -60,3 +61,4 @@ class $modify(MySongInfoLayer, SongInfoLayer) {
         system(link.c_str());
     }
 };
+#endif
