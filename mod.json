@@ -1,5 +1,5 @@
 {
-	"geode": "3.7.1",
+	"geode": "3.8.0",
 	"gd": {
 		"win": "*",
 		"android": "*",
@@ -8,14 +8,19 @@
 	},
 	"id": "endless-spike-studio.endless-proxy-connector",
 	"name": "Endless Proxy Connector",
-	"version": "v2.1.0",
+	"version": "v2.2.0",
 	"developer": "WOSHIZHAZHA120",
 	"description": "?",
 	"early-load": true,
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": "v1.12.0"
+		}],
     "settings":{
         "Enabled":{
             "name": "Enable",
-            "description": "?",
+            "description": "Enable the proxy in game",
             "type": "bool",
             "default": true
         }
