@@ -56,7 +56,7 @@ class $modify(MySongInfoLayer, SongInfoLayer) {
 
     void onProxyWebPage(CCObject*) {
 
-        std::string link = "start https://endless-services.zhazha120.cn/endless_proxy/newgrounds/audios/" + std::to_string(m_songID) + ".mp3";
+        std::string link = "start https://endless-services.zhazha120.cn/#/endless-proxy/newgrounds/audios/" + std::to_string(m_songID);
         system(link.c_str());
     }
 };
