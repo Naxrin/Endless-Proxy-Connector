@@ -1,5 +1,5 @@
 {
-	"geode": "3.8.0",
+	"geode": "4.0.0-alpha.1",
 	"gd": {
 		"win": "*",
 		"android": "*",
@@ -8,7 +8,7 @@
 	},
 	"id": "endless-spike-studio.endless-proxy-connector",
 	"name": "Endless Proxy Connector",
-	"version": "v2.2.0",
+	"version": "v3.2.0-alpha.1",
 	"developer": "WOSHIZHAZHA120",
 	"description": "?",
 	"early-load": true,
