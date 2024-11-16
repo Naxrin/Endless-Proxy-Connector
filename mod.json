@@ -1,5 +1,5 @@
 {
-	"geode": "4.0.0-alpha.1",
+	"geode": "4.0.0-beta.1",
 	"gd": {
 		"win": "*",
 		"android": "*",
@@ -8,14 +8,14 @@
 	},
 	"id": "endless-spike-studio.endless-proxy-connector",
 	"name": "Endless Proxy Connector",
-	"version": "v3.2.0-alpha.1",
+	"version": "v3.2.0",
 	"developer": "WOSHIZHAZHA120",
 	"description": "?",
 	"early-load": true,
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
-			"version": "v1.17.0-alpha.1"
+			"version": "v1.17.0"
 		}],
     "settings":{
         "Enabled":{
